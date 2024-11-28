@@ -56,6 +56,8 @@ namespace ClientLibrary.Helpers
 
         private static CustomUserClaims DecryptToken (string jwtToken)
         {
+           // if (!string.IsNullOrEmpty(jwtToken)) return new CustomUserClaims(jwtToken);
+
             var hanlder =  new JwtSecurityTokenHandler();
             var token = hanlder.ReadJwtToken(jwtToken);
             var userId = token.Claims.FirstOrDefault(_ => _.Type == ClaimTypes.NameIdentifier);
