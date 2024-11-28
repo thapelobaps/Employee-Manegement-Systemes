@@ -33,7 +33,7 @@ namespace ClientLibrary.Services.Implementations
         public async Task<WeatherForecast[]> GetWeatherForecasts()
         {
             var httpClient = await getHttpClient.GetPrivateHttpClient();
-            var result = await httpClient.GetFromJsonAsync<WeatherForecast[]>("api/weatheforecast");
+            var result = await httpClient.GetFromJsonAsync<WeatherForecast[]>("api/weatherforecast");
             return result!;
         }
     }
